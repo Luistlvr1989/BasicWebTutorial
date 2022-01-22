@@ -35,46 +35,14 @@
 
             <!--<button id="btn-datetime" type="button" onclick="document.getElementById('p-datetime').innerHTML = Date()">Display Date and Time</button>-->
             <button id="btn-datetime" type="button">Display Date and Time</button>
-            <p id="p-datetime"></p>
+            <p id="p-datetime"></p><br>
+
+            <p id="p-action"></p>
+
+            <button id="btn-calendar" type="button">Display today's calendar</button>
 
         </div>
-        <!--<script src="js/index.js"></script>-->
-        <!--<script src="js/animations.js"></script>-->
-        <script>
-            //alert("Bienvenido a mi sitio");
 
-            var txtName = document.getElementById("txt-name")
-            var txtAlarm = document.getElementById("txt-alarm")
-            var pDateTime = document.getElementById("p-datetime")
-            var btnDatetime = document.getElementById("btn-datetime")
-        
-            btnDatetime.onclick = function() { 
-                //validateAlarm(txtAlarm.value, txtName.value)
-                if (txtName.value.length == 0) {
-                    pDateTime.innerHTML = Date() 
-                } else {
-                    pDateTime.innerHTML = "Wake up " + txtName.value + "!! " + Date()  
-                }
-            };
-
-            function validateAlarm(alarmTime, username) {
-                var alarm = getDateTime(alarmTime)
-                var currentTime = new Date()
-
-                if (alarm.getTime() < currentTime.getTime()) {
-                    alert("Wake up " + username + "!! It is too late!!!")
-                } else {
-                    pDateTime.innerHTML = "You can sleep a little bit more"
-                }
-            }
-
-            function getDateTime(hour) {
-                var date = new Date();
-                date.setHours(hour, 0, 0)
-                return date
-            }
-
-        </script>
-
+        <script src="js/index.js"></script>
     </body>
 </html>
