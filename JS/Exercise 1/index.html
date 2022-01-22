@@ -5,11 +5,6 @@
         <title>Chicas Programadoras!</title>
     </head>
     <body>
-
-        <script>
-            document.getElementById("")
-        </script>
-
         <img src="images/js.png" class="header-img center" alt="Header" title="Header"/>
 
         <h1>Grupo 3</h1>
@@ -18,7 +13,7 @@
 
         <hr/>
 
-        <div id="list-highlight" class="margin-small">
+        <div id="list-highlight">
 
             <h2>Profesores:</h2>
             <ul>
@@ -29,6 +24,56 @@
             </ul>
 
         </div>
+
+        <div id="list-highlight">
+
+            <label for="txt-name">Name (4 to 8 characters):</label>
+            <input type="text" id="txt-name" name="txt-name" required minlength="4" maxlength="8" size="10">
+
+            <label for="txt-alarm">Alarm hour (1 to 2 numbers):</label>
+            <input type="number" id="txt-alarm" name="txt-alarm" required minlength="1" maxlength="2">
+
+            <!--<button id="btn-datetime" type="button" onclick="document.getElementById('p-datetime').innerHTML = Date()">Display Date and Time</button>-->
+            <button id="btn-datetime" type="button">Display Date and Time</button>
+            <p id="p-datetime"></p>
+
+        </div>
+        <!--<script src="js/index.js"></script>-->
+        <!--<script src="js/animations.js"></script>-->
+        <script>
+            //alert("Bienvenido a mi sitio");
+
+            var txtName = document.getElementById("txt-name")
+            var txtAlarm = document.getElementById("txt-alarm")
+            var pDateTime = document.getElementById("p-datetime")
+            var btnDatetime = document.getElementById("btn-datetime")
+        
+            btnDatetime.onclick = function() { 
+                //validateAlarm(txtAlarm.value, txtName.value)
+                if (txtName.value.length == 0) {
+                    pDateTime.innerHTML = Date() 
+                } else {
+                    pDateTime.innerHTML = "Wake up " + txtName.value + "!! " + Date()  
+                }
+            };
+
+            function validateAlarm(alarmTime, username) {
+                var alarm = getDateTime(alarmTime)
+                var currentTime = new Date()
+
+                if (alarm.getTime() < currentTime.getTime()) {
+                    alert("Wake up " + username + "!! It is too late!!!")
+                } else {
+                    pDateTime.innerHTML = "You can sleep a little bit more"
+                }
+            }
+
+            function getDateTime(hour) {
+                var date = new Date();
+                date.setHours(hour, 0, 0)
+                return date
+            }
+        </script>
 
     </body>
 </html>

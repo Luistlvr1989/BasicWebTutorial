@@ -21,7 +21,7 @@ p, h1 {
 }
 
 .header-img {
-    width: 800px;
+    width: 1200px;
     height: 400px;
 }
 
@@ -29,3 +29,10 @@ p, h1 {
     margin-left: 20px;
 }
 
+input, label { 
+    display: block; 
+}
+
+input { 
+    margin-bottom: 16px;
+}
